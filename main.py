@@ -1,8 +1,22 @@
 from config import numerical_target, current_number, commnads
+import asyncio
+from vkbottle import API
 
+async def main():
+
+    numerical_target = None
+    current_number = 0
+
+    target_flag = False
+
+    commnads = ['+ 1', '- 1', '+ num', '- num', 'reset']
+    
+    api = API("7eba078111f6ec90808fdade98ed07c86110a399347e26ee831d7a0baf9f933c620a2e5694292ae532386")
+    
+    await api.wall.post(message = "Введите цель")
 
 def input_target():
-    cycle = True
+    cycle = True 
     while cycle:
         try:
             numerical_target_input = int(input('Введите цель: '))
@@ -112,3 +126,5 @@ def main(numerical_target, current_number):
 work = True
 while work:
     main(numerical_target, current_number)
+
+asyncio.run(main())
