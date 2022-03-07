@@ -11,7 +11,7 @@ async def main():
 
     commnads = ['+ 1', '- 1', '+ num', '- num', 'reset']
     
-    api = API("7eba078111f6ec90808fdade98ed07c86110a399347e26ee831d7a0baf9f933c620a2e5694292ae532386")
+    api = API("my_token")
     
     await api.wall.post(message = "Введите цель")
 
